@@ -23,5 +23,5 @@ This site acts as a **live catalog demo** for potential clients, showing what I 
 
 ## Preview
 
-View the live version [on GitHub](https://github.com/Jane-Emmanuel/pure-html-css-website-demo)
+View the live version [on GitHub](https://github.com/Jane-Emmanuel/Pure-html-css-website-demo)
 
