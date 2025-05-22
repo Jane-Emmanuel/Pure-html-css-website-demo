@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jaind Fashion Home</title>
+  <style>
+    :root {
+      --primary: #ff1493;
+      --secondary: #ff69b4;
+      --accent: #ffb6c1;
+      --bg: #fff0f5;
+      --text: #2c003e;
+      --card: #ffe4e1;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: var(--secondary);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--accent);
+      color: var(--text);
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .search-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: space-between;
+    }
+
+    .search-filter input,
+    .search-filter select {
+      padding: 0.5rem;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .product {
+      background: var(--card);
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 250px;
+      flex: 1 1 200px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.02);
+    }
+
+    .product img {
+      width: 100%;
+      display: block;
+    }
+
+    details {
+      padding: 1rem;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      background: white;
+      border: 2px solid var(--accent);
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 300px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    form input,
+    form textarea {
+      padding: 0.8rem;
+      border: 2px solid var(--primary);
+      border-radius: 6px;
+    }
+
+    form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--secondary);
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .search-filter {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body class="fade-in">
+
+  <header>
+    <h1>Jaind Fashion Home</h1>
+    <p>Stylish. Vibrant. Responsive.</p>
+  </header>
+
+  <nav>
+    <a href="#gallery">Gallery</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="gallery">
+    <h2>Product Gallery</h2>
+    <div class="search-filter">
+      <input type="text" id="searchInput" placeholder="Search product...">
+      <select id="categorySelect">
+        <option value="">All Categories</option>
+        <option value="Dresses">Dresses</option>
+        <option value="Tops">Tops</option>
+        <option value="Jackets">Jackets</option>
+      </select>
+    </div>
+    <div class="gallery" id="galleryGrid">
+      <div class="product" data-category="Dresses">
+        <img src="https://source.unsplash.com/300x400/?fashion,dress" alt="Product 1">
+        <details><summary>Red Dress</summary><p>Elegant evening dress with a modern cut.</p></details>
+      </div>
+      <div class="product" data-category="Tops">
+        <img src="https://source.unsplash.com/300x400/?fashion,top" alt="Product 2">
+        <details><summary>Silk Top</summary><p>Lightweight silk top with premium feel.</p></details>
+      </div>
+      <div class="product" data-category="Jackets">
+        <img src="https://source.unsplash.com/300x400/?fashion,jacket" alt="Product 3">
+        <details><summary>Leather Jacket</summary><p>Stylish cropped leather jacket.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop">
+    <h2>Shop Preview</h2>
+    <p>We design and showcase unique fashion pieces with mobile-first, responsive code. This shop section is built to highlight clean, functional HTML/CSS-based designs.</p>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Jaind Fashion Home is where digital design meets fashion flair. I build visually stunning and technically lightweight websites that are easy to browse, fast to load, and beautiful to experience.</p>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <p>“The most elegant design I’ve ever seen!”</p>
+        <strong>– Fashion Boutique Owner</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>“Fast, clean and visually striking. Perfect for my store!”</p>
+        <strong>– Startup Client</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/xzzrroyg" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jaind Fashion Home.
+      Designed by Jane Emmanuel. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const categorySelect = document.getElementById('categorySelect');
+    const products = document.querySelectorAll('.product');
+
+    function filterProducts() {
+      const search = searchInput.value.toLowerCase();
+      const category = categorySelect.value;
+
+      products.forEach(product => {
+        const matchText = product.innerText.toLowerCase().includes(search);
+        const matchCategory = category === '' || product.dataset.category === category;
+
+        product.style.display = (matchText && matchCategory) ? 'block' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', filterProducts);
+    categorySelect.addEventListener('change', filterProducts);
+  </script>
+</body>
+</html>
